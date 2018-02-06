@@ -4,4 +4,5 @@ export class GemModel {
     name: string;
     price: number;
     description: string;
+    fullImagePath: string;
 }

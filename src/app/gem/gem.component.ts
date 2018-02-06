@@ -8,13 +8,14 @@ import { GemModel } from '../../gemmodel';
   styleUrls: ['./gem.component.css']
 })
 export class GemComponent implements OnInit {
-    
-    gem : GemModel = {
+
+    gem: GemModel = {
         id: 1,
         name: 'Dodecahedron',
         price: 2.95,
-        description: 'Some gems have hidden qualities beyond their lustre, beyond their shine... Dodecahedron is one of those gems.'
-    }
+        description: 'Some gems have hidden qualities beyond their lustre, beyond their shine... Dodecahedron is one of those gems.',
+        fullImagePath: './assets/gem-images/gem-01.gif'
+    };
 
   constructor() { }
 
