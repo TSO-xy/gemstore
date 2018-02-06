@@ -23,7 +23,7 @@ export class AppComponent {
                        
     {
         id: 2,
-        name: 'Cubicle',
+        name: 'Cubichloron',
         price: 2.95,
         description: 'Some gems have hidden qualities beyond their lustre, beyond their shine... Dodecahedron is one of those gems.',
         fullImagePath: './assets/gem-images/gem-05.gif',
