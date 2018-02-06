@@ -5,3 +5,7 @@
     border-color: darkgray;
     border-width: 2.5px;
 }
+
+.btn-default {
+    background-color: lightgrey;
+}
