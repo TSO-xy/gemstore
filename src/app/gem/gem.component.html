@@ -1,20 +1,15 @@
 <div class="card">
     <div class="card-header">
-    {{gem.name}}
+        {{gem.name}}
     </div>
     <div class="card-body">
-       {{gem.price | currency}}
-        <img src="{{gem.fullImagePath}}" width="100%" alt="gem image"/>
+        {{gem.price | currency}}
+        <img src="{{gem.fullImagePath}}" width="100%" alt="gem image" />
     </div>
     <div class="card-footer">
-    <p>{{gem.description}}</p>
-    <h6>Colors available</h6>
-        <ul>
-            <li *ngFor="let color of gem.colors">{{color}}</li>
-        </ul>
-    <p>Stock: {{gem.inventory}}</p>
+        <p>Stock: {{gem.inventory}}</p>
     </div>
-    <button *ngIf="gem.inventory > 0" class="btn btn-default" (click)="gem.inventory = gem.inventory - 1">Add to Cart</button>
+    <app-tabs [gem]="gem"></app-tabs>
+    <button *ngIf="gem.inventory > 0" class="btn btn-default" (click)="addToCart()">Add to Cart</button>
     <button *ngIf="gem.inventory <= 0" class="btn btn-danger" disabled>Sold Out</button>
-
 </div>

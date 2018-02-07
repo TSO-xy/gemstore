@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 
 import { GemModel } from '../gemmodel';
 
+import { cartmodel } from '../cartmodel';
+import { cartitemmodel } from '../cartitemmodel';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,6 +13,12 @@ import { GemModel } from '../gemmodel';
 export class AppComponent {
   title = 'Gem Store';
   now = Date.now().toString();
+
+    cart: cartmodel = {
+        totalprice: 0,
+        totalquantity: 0,
+        items: [],
+    }
 
     gems: GemModel[] = [{
         id: 1,

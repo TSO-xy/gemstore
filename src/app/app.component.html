@@ -1,6 +1,6 @@
-<app-navbar></app-navbar>
+<app-navbar [cart]="cart"></app-navbar>
 <main class="container">
    <div class="row">
-    <app-gem class="col-6" [gem]="g" *ngFor="let g of gems"></app-gem>
+    <app-gem class="col-4" [gem]="g" [cart]="cart" *ngFor="let g of gems"></app-gem>
     </div>
 </main>
