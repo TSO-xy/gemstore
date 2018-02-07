@@ -9,8 +9,15 @@ import { ReviewModel } from '../../reviewmodel';
 })
 export class ReviewsComponent implements OnInit { 
     @Input() gem: GemModel;
-
     newReview: ReviewModel;
+    
+    submitClicked() {
+        this.gem.reviews.push(this.newReview); //reviews is an array
+        //TODO: this does not save reviews. has to be sent to a persisted data store
+        this.ngOnInit();
+    }
+
+    
   constructor() { }
 
   ngOnInit() {
