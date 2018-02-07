@@ -18,6 +18,7 @@ export class GemComponent implements OnInit {
     addToCart() {        
         this.gem.inventory--;
         this.cart.totalquantity++;
+        //if(this)
     }
     
   constructor() { }

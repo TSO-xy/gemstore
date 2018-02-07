@@ -10,6 +10,7 @@ import { cartitemmodel } from '../../cartitemmodel';
 })
 export class NavbarComponent implements OnInit {
     @Input() cart: cartmodel;
+    @Input() item: cartitemmodel;
     
     links = [{
 		text: 'Home',

@@ -1,3 +1,4 @@
+import { ReviewModel } from './reviewmodel';
 
 export class GemModel {
     id: number;
@@ -7,4 +8,5 @@ export class GemModel {
     fullImagePath: string;
     inventory: number;
     colors: string[];
+    reviews: ReviewModel[];
 }
