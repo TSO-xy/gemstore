@@ -2,7 +2,10 @@
 <div *ngFor="let review of gem.reviews">
     <!--reviews is an array-->
     <div class="row">
-        <div class="col-10">
+        <div class="col-2">
+            <img class="img-fluid" src="{{avatarService.generate(review.author)}}" />
+        </div>
+        <div class="col-8">
             <blockquote class="blockquote">
                 <p class="mb-0">"{{review.body}}"</p>
                 <footer class="blockquote-footer"><cite>{{review.author}}</cite></footer>
@@ -28,29 +31,39 @@
 </div>
 
 <form #reviewForm="ngForm" (ngSubmit)="submitClicked(); reviewForm.reset();" name="reviewForm">
-   <div class="alert alert-danger" *ngIf="reviewForm.invalid && reviewForm.touched">
-   Fix form!
-   <ul>
-       <li *ngIf="email.errors.required">
-       Email required.
-       </li>
-   </ul>
-   </div>     
-    <p>Form Valid: {{reviewForm.valid}}</p>
+    <div class="alert alert-danger" *ngIf="reviewForm.invalid && reviewForm.touched">
+        Please complete your review.
+        <ul>
+            <li *ngIf="email.touched && email.invalid && email.errors.required">
+                Email required.
+                <!--<script>emailAlert();</script>-->
+
+            </li>
+            <li *ngIf="text.touched && text.invalid && text.errors.required">
+                Comment required.
+                <!--<script>commentAlert();</script>-->
+
+            </li>
+        </ul>
+    </div>
+    <!--<p>Form Valid: {{reviewForm.valid}}</p>
     <p>Form Invalid: {{reviewForm.invalid}}</p>
     <p>Form Dirty: {{reviewForm.dirty}}</p>
     <p>Form Pristine: {{reviewForm.pristine}}</p>
     <p>Form Touched: {{reviewForm.touched}}</p>
-    <p>Form Untouched: {{reviewForm.untouched}}</p>
+    <p>Form Untouched: {{reviewForm.untouched}}</p>-->
     <div class="form-group">
-        <label for="usr">Email:</label>
-        <input type="text" class="form-control" name="email" [(ngModel)]="newReview.author" required [class.is-invalid]="email.invalid && email.touched" #email="ngModel" placeholder="Enter email">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="newReview.author" required [class.is-invalid]="email.invalid && email.touched && email.errors.required" #email="ngModel" placeholder="Enter email">
         <div class="invalid-feedback">
             Email is required.
         </div>
     </div>
     <div class="form-group">
-        <textarea class="form-control" rows="5" placeholder="Comment here..." name="comment" [(ngModel)]="newReview.body" required></textarea>
+        <textarea type="text" class="form-control" rows="5" placeholder="Comment here..." name="comment" [(ngModel)]="newReview.body" required [class.is-invalid]="text.invalid && text.touched" #text="ngModel"></textarea>
+        <div class="invalid-feedback">
+            Please leave a review.
+        </div>
     </div>
     <div class="form-group">
         <label for="sel1">Select rating:</label>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { GemModel } from '../gemmodel';
 
@@ -10,7 +10,7 @@ import { cartitemmodel } from '../cartitemmodel';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Gem Store';
   now = Date.now().toString();
 
@@ -19,6 +19,11 @@ export class AppComponent {
         totalquantity: 0,
         items: [],
     };
+    
+    ngOnInit() {
+        //TODO: pull data from an API here:
+        console.log(JSON.stringify(this.gems));
+    }
 
     gems: GemModel[] = [{
         id: 1,

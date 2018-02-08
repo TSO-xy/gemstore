@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GemModel } from '../../gemmodel';
 import { ReviewModel } from '../../reviewmodel';
+import { AvatarService } from '../avatar.service';
 
 @Component({
   selector: 'app-reviews',
@@ -16,17 +17,19 @@ export class ReviewsComponent implements OnInit {
         //TODO: this does not save reviews. has to be sent to a persisted data store
         this.ngOnInit();
     }
-
     
-  constructor() { }
+    
+    
+  constructor(private avatarService: AvatarService) {
+  }
 
   ngOnInit() {
       this.newReview = {
-          id: -1, 
-          createddate: "", 
-          body: "",
+          id: -1,
+          createddate: '', 
+          body: '',
           rating: 5,
-          author: "",
+          author: '',
       }
   }
 
