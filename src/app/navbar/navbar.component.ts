@@ -17,10 +17,10 @@ export class NavbarComponent implements OnInit {
 		href: '/Home',
 	}, {
 		text: 'Account',
-		href: '/Account',
+		href: '/account',
 	}, {
 		//text: 'Cart',
-		href: '/Cart',
+		href: '/cart',
 	}];
 
 

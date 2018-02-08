@@ -2,8 +2,8 @@
     <a class="navbar-brand" href="">Gem Store</a>
     <ul class="navbar-nav mr-auto">
         <li class="nav-item" *ngFor="let link of links">
-            <a class="nav-link" href="{{link.href}}">{{link.text}}</a> </li>
+            <a class="nav-link" routerLink="/account">{{link.text}}</a> </li>
         <li>
-            <a class="nav-link" href="" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="These are the items in your cart.">Cart<span class="badge badge-light">{{cart.totalquantity}}</span></a></li>
+            <a class="nav-link" routerLink="/cart" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="These are the items in your cart.">Cart<span class="badge badge-light">{{cart.totalquantity}}</span></a></li>
     </ul>
 </nav>
